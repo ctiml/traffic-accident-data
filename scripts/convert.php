@@ -11,7 +11,9 @@ if (!file_exists($filepath)) {
     exit;
 }
 $output_dir = $argv[2];
-mkdir(__DIR__ . '/' . $output_dir, 0755, true);
+if (!file_exists($output_dir)) {
+    mkdir(__DIR__ . '/' . $output_dir, 0755, true);
+}
 
 $pattern = '#(\d+)年(\d+)月(\d+)日 (\d+)時(\d+)分,(.*),死亡(\d+);受傷(\d+),(.*)#';
 $content = file_get_contents($filepath);
