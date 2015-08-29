@@ -27,7 +27,7 @@ foreach (array_filter(explode("\n", $content)) as $line) {
         $month = $matches[2];
         $day = $matches[3];
         $time = $matches[4] . $matches[5];
-        $datetime = intval($date . $year . $month . $day);
+        $datetime = intval($year . $month . $day . $time);
         $address = urlencode(trim($matches[6]));
         $death = intval($matches[7]);
         $injury = intval($matches[8]);
